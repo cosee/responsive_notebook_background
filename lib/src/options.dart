@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 
+/// Options class.
+///
+/// Contains all options for the ResponsiveNotebookBackground.
 class ResponsiveNotebookBackgroundOptions {
   const ResponsiveNotebookBackgroundOptions({
     this.horizontalPadding = 0.0,
@@ -11,32 +14,24 @@ class ResponsiveNotebookBackgroundOptions {
     this.style,
   });
 
-  /// The width of the sidebar.
+  /// Horizontal padding of the child.
   final double horizontalPadding;
 
-  /// Placement of the children in the sidebar.
+  /// Amount of lines, which should be left blank on top of the child.
   final double blankLines;
 
-  /// Optional background color for the sidebar.
+  /// Optional background color.
   final Color backgroundColor;
 
-  /// A [List] of [String] representing the symbols to be shown.
-  ///
-  /// Strings must be unique.
+  /// The color of the lines
   final Color lineColor;
 
-  /// Activates symbols without children.
-  ///
-  /// Enables jumping to the position even if there are no entries present.
+  /// Enables squared design
   final bool squared;
 
-  /// Activates symbols without children.
-  ///
-  /// Enables jumping to the position even if there are no entries present.
+  /// Optional TextStyle that the notebook.dart class can use to draw the lines
   final TextStyle? style;
 
-  /// Activates symbols without children.
-  ///
-  /// Enables jumping to the position even if there are no entries present.
+  /// The width of the lines.
   final double lineWidth;
 }
