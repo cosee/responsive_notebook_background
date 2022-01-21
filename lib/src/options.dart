@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class ResponsiveNotebookBackgroundOptions {
   const ResponsiveNotebookBackgroundOptions({
     this.horizontalPadding = 0.0,
-    this.blankLines = 0.0,
+    this.blankLines = 0,
     this.backgroundColor = Colors.white,
     this.lineType = LineType.line,
     this.lineColor = Colors.grey,
@@ -15,7 +15,7 @@ class ResponsiveNotebookBackgroundOptions {
   final double horizontalPadding;
 
   /// Blank lines at the beginning.
-  final double blankLines;
+  final int blankLines;
 
   /// Background color.
   final Color backgroundColor;

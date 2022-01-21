@@ -6,13 +6,11 @@ class Notebook extends StatelessWidget {
   final bool needsSquare;
   final Color lineColor;
   final Color backgroundColor;
-  final double blankLines;
   final double lineWidth;
 
   const Notebook({
     Key? key,
     this.style,
-    required this.blankLines,
     required this.lineColor,
     required this.lineWidth,
     required this.backgroundColor,
