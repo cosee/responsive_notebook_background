@@ -11,7 +11,9 @@ class ExampleSquared extends StatelessWidget {
         children: [
           Positioned.fill(
             child: ResponsiveNotebookBackground(
-              options: const ResponsiveNotebookBackgroundOptions(squared: true),
+              options: const ResponsiveNotebookBackgroundOptions(
+                lineType: LineType.grid,
+              ),
               child: Stack(children: [
                 Padding(
                   padding: EdgeInsets.only(

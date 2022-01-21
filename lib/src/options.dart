@@ -5,38 +5,39 @@ class ResponsiveNotebookBackgroundOptions {
     this.horizontalPadding = 0.0,
     this.blankLines = 0.0,
     this.backgroundColor = Colors.white,
-    this.squared = false,
+    this.lineType = LineType.line,
     this.lineColor = Colors.grey,
     this.lineWidth = 1.0,
     this.styleForHeightCalculation,
   });
 
-  /// The width of the sidebar.
+  /// Horizontal space to be left blank.
   final double horizontalPadding;
 
-  /// Placement of the children in the sidebar.
+  /// Blank lines at the beginning.
   final double blankLines;
 
-  /// Optional background color for the sidebar.
+  /// Background color.
   final Color backgroundColor;
 
-  /// A [List] of [String] representing the symbols to be shown.
-  ///
-  /// Strings must be unique.
+  /// Grid lines color.
   final Color lineColor;
 
-  /// Activates symbols without children.
+  /// Type of lines.
   ///
-  /// Enables jumping to the position even if there are no entries present.
-  final bool squared;
+  /// Default ist [LineType.line].
+  final LineType lineType;
 
-  /// Activates symbols without children.
-  ///
-  /// Enables jumping to the position even if there are no entries present.
-  final TextStyle? styleForHeightCalculation;
-
-  /// Activates symbols without children.
-  ///
-  /// Enables jumping to the position even if there are no entries present.
+  /// Thickness of the lines.
   final double lineWidth;
+
+  /// Custom [TextStyle] to be used when calculating the line height.
+  ///
+  /// If not set, [ThemeDate.primaryTextTheme.bodyText1] will be used.
+  final TextStyle? styleForHeightCalculation;
+}
+
+enum LineType {
+  line,
+  grid,
 }
