@@ -25,7 +25,7 @@ class ResponsiveNotebookBackground extends StatelessWidget {
               lineColor: options.lineColor,
               backgroundColor: options.backgroundColor,
               lineWidth: options.lineWidth,
-              style: options.style,
+              style: options.styleForHeightCalculation,
               needsSquare: options.squared,
             ),
           ),

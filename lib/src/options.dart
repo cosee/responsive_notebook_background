@@ -8,7 +8,7 @@ class ResponsiveNotebookBackgroundOptions {
     this.squared = false,
     this.lineColor = Colors.grey,
     this.lineWidth = 1.0,
-    this.style,
+    this.styleForHeightCalculation,
   });
 
   /// The width of the sidebar.
@@ -33,7 +33,7 @@ class ResponsiveNotebookBackgroundOptions {
   /// Activates symbols without children.
   ///
   /// Enables jumping to the position even if there are no entries present.
-  final TextStyle? style;
+  final TextStyle? styleForHeightCalculation;
 
   /// Activates symbols without children.
   ///
