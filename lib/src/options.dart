@@ -6,32 +6,41 @@ import 'package:flutter/material.dart';
 class ResponsiveNotebookBackgroundOptions {
   const ResponsiveNotebookBackgroundOptions({
     this.horizontalPadding = 0.0,
-    this.blankLines = 0.0,
+    this.blankLines = 0,
     this.backgroundColor = Colors.white,
-    this.squared = false,
+    this.lineType = LineType.line,
     this.lineColor = Colors.grey,
     this.lineWidth = 1.0,
-    this.style,
+    this.styleForHeightCalculation,
   });
 
-  /// Horizontal padding of the child.
+  /// Horizontal space to be left blank.
   final double horizontalPadding;
 
-  /// Amount of lines, which should be left blank on top of the child.
-  final double blankLines;
+  /// Blank lines at the beginning.
+  final int blankLines;
 
-  /// Optional background color.
+  /// Background color.
   final Color backgroundColor;
 
-  /// The color of the lines
+  /// Grid lines color.
   final Color lineColor;
 
-  /// Enables squared design
-  final bool squared;
+  /// Type of lines.
+  ///
+  /// Default ist [LineType.line].
+  final LineType lineType;
 
-  /// Optional TextStyle that the notebook.dart class can use to draw the lines
-  final TextStyle? style;
-
-  /// The width of the lines.
+  /// Thickness of the lines.
   final double lineWidth;
+
+  /// Custom [TextStyle] to be used when calculating the line height.
+  ///
+  /// If not set, [ThemeDate.primaryTextTheme.bodyText1] will be used.
+  final TextStyle? styleForHeightCalculation;
+}
+
+enum LineType {
+  line,
+  grid,
 }

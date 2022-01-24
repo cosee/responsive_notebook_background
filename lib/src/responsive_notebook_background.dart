@@ -16,29 +16,30 @@ class ResponsiveNotebookBackground extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return LineSizeBuilder.forSingleLine(builder: (_, textHeight) {
-      return Stack(
-        children: [
-          Positioned.fill(
-            child: Notebook(
-              blankLines: options.blankLines * textHeight,
-              lineColor: options.lineColor,
-              backgroundColor: options.backgroundColor,
-              lineWidth: options.lineWidth,
-              style: options.style,
-              needsSquare: options.squared,
-            ),
-          ),
-          if (child != null)
-            Padding(
-              padding: EdgeInsets.only(
-                  left: options.horizontalPadding,
-                  right: options.horizontalPadding,
-                  top: options.blankLines * textHeight),
-              child: child!,
-            ),
-        ],
-      );
-    });
+    return LineSizeBuilder.forSingleLine(
+        style: options.styleForHeightCalculation,
+        builder: (_, textHeight) {
+          return Stack(
+            children: [
+              Positioned.fill(
+                child: Notebook(
+                  lineColor: options.lineColor,
+                  backgroundColor: options.backgroundColor,
+                  lineWidth: options.lineWidth,
+                  style: options.styleForHeightCalculation,
+                  needsSquare: options.lineType == LineType.grid,
+                ),
+              ),
+              if (child != null)
+                Padding(
+                  padding: EdgeInsets.only(
+                      left: options.horizontalPadding,
+                      right: options.horizontalPadding,
+                      top: options.blankLines * textHeight),
+                  child: child!,
+                ),
+            ],
+          );
+        });
   }
 }
