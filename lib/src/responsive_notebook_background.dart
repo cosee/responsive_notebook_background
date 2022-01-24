@@ -3,9 +3,12 @@ import 'package:responsive_notebook_background/src/line_size_builder.dart';
 import 'package:responsive_notebook_background/src/notebook.dart';
 import 'package:responsive_notebook_background/src/options.dart';
 
+/// A notebook background which is responsive to the system text size settings.
+///
+/// Add [ResponsiveNotebookBackgroundOptions] to make adjustments.
 class ResponsiveNotebookBackground extends StatelessWidget {
+  /// Optional widget which will placed over the notebook background
   final Widget? child;
-
   final ResponsiveNotebookBackgroundOptions options;
 
   const ResponsiveNotebookBackground({
