@@ -1,4 +1,4 @@
-# example
+# responsive_notebook_background_example
 
 A new Flutter project.
 

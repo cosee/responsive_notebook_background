@@ -1,16 +1,71 @@
-# flutter_package
+A notebook background which is responsive to the system text size settings.
 
-A new Flutter project.
+## Features
 
-## Getting Started
+- Easy to use
+- Customizable line thickness
+- Customizable line color
+- Customizable background color
+- Line- and Grid-Layout
+- Possibility to leave blank lines on top of content
+- Included LineSizeBuilder to determine the height of default text
 
-This project is a starting point for a Flutter application.
+## Usage
 
-A few resources to get you started if this is your first Flutter project:
+Depend on it:
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+```yaml
+dependencies:
+  responsive_notebook_background: ^0.1.0
+```
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Import it:
+
+```dart
+import 'package:responsive_notebook_background/responsive_notebook_background.dart';
+```
+
+Example:
+
+```dart
+Stack(
+      children: const [
+        Positioned.fill(
+          child: ResponsiveNotebookBackground(
+            options: ResponsiveNotebookBackgroundOptions(),
+            child: Text(
+                'Lorem ipsum dolor sit amet.'),
+          ),
+        ),
+      ],
+    );
+```
+
+## Customization options
+
+```dart
+ static const TextStyle textStyle =
+      TextStyle(fontSize: 10, fontWeight: FontWeight.w500, color: Colors.blue);
+
+      Stack(
+            children: const [
+              Positioned.fill(
+                child: ResponsiveNotebookBackground(
+                  options: ResponsiveNotebookBackgroundOptions(
+                    blankLines: 2,
+                    horizontalPadding: 20,
+                    lineWidth: 2.5,
+                    backgroundColor: Colors.black12,
+                    lineColor: Colors.red,
+                    lineType: LineType.line,
+                    styleForHeightCalculation: textStyle,
+                  ),
+                  child: Text(
+                    'Lorem ipsum dolor sit amet.',
+                    style: textStyle,
+                  ),
+                ),
+              ),
+            ],
+          );
+```
