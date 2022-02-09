@@ -8,10 +8,15 @@ class ExampleCustom extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      children: const [
-        Positioned.fill(
-          child: ResponsiveNotebookBackground(
+    return LayoutBuilder(builder: (context, constraints) {
+      return SingleChildScrollView(
+        primary: false,
+        child: ConstrainedBox(
+          constraints: BoxConstraints(
+            minHeight: constraints.maxHeight,
+            minWidth: constraints.maxWidth,
+          ),
+          child: const ResponsiveNotebookBackground(
             options: ResponsiveNotebookBackgroundOptions(
               blankLines: 2,
               horizontalPadding: 20,
@@ -27,7 +32,7 @@ class ExampleCustom extends StatelessWidget {
             ),
           ),
         ),
-      ],
-    );
+      );
+    });
   }
 }
