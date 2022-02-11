@@ -20,7 +20,7 @@ class ResponsiveNotebookBackground extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return LineSizeBuilder.forSingleLine(
-        style: options.styleForHeightCalculation,
+        styleForHeightCalculation: options.styleForHeightCalculation,
         builder: (_, textHeight) {
           return Stack(
             children: [

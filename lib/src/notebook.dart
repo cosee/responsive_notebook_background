@@ -20,7 +20,7 @@ class Notebook extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return LineSizeBuilder.forSingleLine(
-      style: style,
+      styleForHeightCalculation: style,
       builder: (_, textHeight) => Container(
         color: backgroundColor,
         child: CustomPaint(
