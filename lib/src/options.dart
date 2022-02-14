@@ -23,12 +23,12 @@ class ResponsiveNotebookBackgroundOptions {
   /// Background color.
   final Color backgroundColor;
 
-  /// Grid lines color.
+  /// Lines color.
   final Color lineColor;
 
   /// Type of lines.
   ///
-  /// Default ist [LineType.line].
+  /// Default is [LineType.line].
   final LineType lineType;
 
   /// Thickness of the lines.
@@ -40,6 +40,7 @@ class ResponsiveNotebookBackgroundOptions {
   final TextStyle? styleForHeightCalculation;
 }
 
+/// The type of the line
 enum LineType {
   line,
   grid,

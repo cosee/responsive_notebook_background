@@ -1,11 +1,25 @@
 import 'package:flutter/material.dart';
 import 'package:responsive_notebook_background/src/line_size_builder.dart';
 
+/// A notebook.
+///
+/// Either displaying single lines or grids.
 class Notebook extends StatelessWidget {
+  /// Custom [TextStyle] to be used for the [LineSizeBuilder].
+  ///
+  /// If not set, [ThemeDate.primaryTextTheme.bodyText1] will be used.
   final TextStyle? style;
-  final bool needsSquare;
+
+  /// If the [_NotebookPainter] should draw grids instead of single lines.
+  final bool isGrid;
+
+  /// Line color.
   final Color lineColor;
+
+  /// Background color.
   final Color backgroundColor;
+
+  /// Thickness of the lines.
   final double lineWidth;
 
   const Notebook({
@@ -14,7 +28,7 @@ class Notebook extends StatelessWidget {
     required this.lineColor,
     required this.lineWidth,
     required this.backgroundColor,
-    required this.needsSquare,
+    required this.isGrid,
   }) : super(key: key);
 
   @override
@@ -27,9 +41,8 @@ class Notebook extends StatelessWidget {
           painter: _NotebookPainter(
             lineWidth: lineWidth,
             textHeight: textHeight,
-            context: context,
             lineColor: lineColor,
-            needsSquare: needsSquare,
+            isGrid: isGrid,
           ),
         ),
       ),
@@ -37,31 +50,35 @@ class Notebook extends StatelessWidget {
   }
 }
 
+/// Painter for the [Notebook].
+/// Paints grids or single lines depending on [isGrid].
 class _NotebookPainter extends CustomPainter {
+  /// The space between each line
   final double textHeight;
-  final bool needsSquare;
-  final double lineWidth;
-  final Color lineColor;
 
-  final BuildContext context;
+  /// If the painter should draw grids instead of single lines
+  final bool isGrid;
+
+  /// Thickness of the lines.
+  final double lineWidth;
+
+  /// Line color.
+  final Color lineColor;
 
   const _NotebookPainter({
     required this.textHeight,
     required this.lineWidth,
-    required this.needsSquare,
+    required this.isGrid,
     required this.lineColor,
-    required this.context,
   });
 
-  Paint _createLinePaint() => Paint()
+  Paint get _linePaint => Paint()
     ..color = lineColor
     ..strokeWidth = lineWidth;
 
   @override
-  void paint(Canvas canvas, Size size) {
-    final linePaint = _createLinePaint();
-    _createCommonNotebook(size, canvas, linePaint);
-  }
+  void paint(Canvas canvas, Size size) =>
+      _createCommonNotebook(size, canvas, _linePaint);
 
   void _createCommonNotebook(Size size, Canvas canvas, Paint linePaint) {
     for (double yPosition = textHeight;
@@ -73,7 +90,8 @@ class _NotebookPainter extends CustomPainter {
         linePaint,
       );
     }
-    if (needsSquare) {
+
+    if (isGrid) {
       for (double xPosition = 0;
           xPosition < size.width;
           xPosition += textHeight) {
@@ -88,9 +106,7 @@ class _NotebookPainter extends CustomPainter {
 
   @override
   bool shouldRepaint(covariant CustomPainter oldDelegate) {
-    if (oldDelegate is! _NotebookPainter) {
-      return true;
-    }
-    return textHeight != oldDelegate.textHeight;
+    return oldDelegate is! _NotebookPainter ||
+        textHeight != oldDelegate.textHeight;
   }
 }

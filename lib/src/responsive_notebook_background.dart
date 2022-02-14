@@ -9,6 +9,8 @@ import 'package:responsive_notebook_background/src/options.dart';
 class ResponsiveNotebookBackground extends StatelessWidget {
   /// Optional widget which will placed over the notebook background
   final Widget? child;
+
+  /// Options for the [ResponsiveNotebookBackground].
   final ResponsiveNotebookBackgroundOptions options;
 
   const ResponsiveNotebookBackground({
@@ -20,29 +22,31 @@ class ResponsiveNotebookBackground extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return LineSizeBuilder.forSingleLine(
-        styleForHeightCalculation: options.styleForHeightCalculation,
-        builder: (_, textHeight) {
-          return Stack(
-            children: [
-              Positioned.fill(
-                child: Notebook(
-                  lineColor: options.lineColor,
-                  backgroundColor: options.backgroundColor,
-                  lineWidth: options.lineWidth,
-                  style: options.styleForHeightCalculation,
-                  needsSquare: options.lineType == LineType.grid,
-                ),
+      styleForHeightCalculation: options.styleForHeightCalculation,
+      builder: (_, textHeight) {
+        return Stack(
+          children: [
+            Positioned.fill(
+              child: Notebook(
+                lineColor: options.lineColor,
+                backgroundColor: options.backgroundColor,
+                lineWidth: options.lineWidth,
+                style: options.styleForHeightCalculation,
+                isGrid: options.lineType == LineType.grid,
               ),
-              if (child != null)
-                Padding(
-                  padding: EdgeInsets.only(
-                      left: options.horizontalPadding,
-                      right: options.horizontalPadding,
-                      top: options.blankLines * textHeight),
-                  child: child!,
+            ),
+            if (child != null)
+              Padding(
+                padding: EdgeInsets.only(
+                  left: options.horizontalPadding,
+                  right: options.horizontalPadding,
+                  top: options.blankLines * textHeight,
                 ),
-            ],
-          );
-        });
+                child: child,
+              ),
+          ],
+        );
+      },
+    );
   }
 }

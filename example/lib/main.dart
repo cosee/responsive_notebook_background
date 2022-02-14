@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:responsive_notebook_background_example/pages/custom.dart';
-import 'package:responsive_notebook_background_example/pages/lined.dart';
 import 'package:responsive_notebook_background_example/pages/grid.dart';
+import 'package:responsive_notebook_background_example/pages/lined.dart';
 
 void main() {
   runApp(const MyApp());
@@ -45,7 +45,7 @@ class Home extends StatelessWidget {
               ),
               Tab(
                 text: 'Custom',
-              )
+              ),
             ],
           ),
         ),
