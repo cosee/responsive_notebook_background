@@ -24,8 +24,7 @@ class LineSizeBuilder extends StatelessWidget {
     this.styleForHeightCalculation,
     this.text,
     required this.builder,
-  })
-      : maxWidth = double.infinity,
+  })  : maxWidth = double.infinity,
         super(key: key);
 
   /// Determines the height of multiple lines of text
@@ -34,8 +33,7 @@ class LineSizeBuilder extends StatelessWidget {
     this.styleForHeightCalculation,
     required int lineCount,
     required this.builder,
-  })
-      : maxWidth = double.infinity,
+  })  : maxWidth = double.infinity,
         text = ' ${'\n' * (lineCount - 1)}',
         super(key: key);
 
@@ -54,17 +52,11 @@ class LineSizeBuilder extends StatelessWidget {
       text: TextSpan(
         text: text,
         style: styleForHeightCalculation ??
-            Theme
-                .of(context)
-                .primaryTextTheme
-                .bodyText1,
+            Theme.of(context).primaryTextTheme.bodyText1,
       ),
-      textScaleFactor: MediaQuery
-          .of(context)
-          .textScaleFactor,
+      textScaleFactor: MediaQuery.of(context).textScaleFactor,
       textDirection: TextDirection.ltr,
-    )
-      ..layout(maxWidth: maxWidth);
+    )..layout(maxWidth: maxWidth);
 
     return builder(context, painter.size.height);
   }
