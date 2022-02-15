@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:responsive_notebook_background/responsive_notebook_background.dart';
 
-class ExampleSquared extends StatelessWidget {
-  const ExampleSquared({Key? key}) : super(key: key);
+class ExampleGrid extends StatelessWidget {
+  const ExampleGrid({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

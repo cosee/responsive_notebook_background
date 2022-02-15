@@ -54,7 +54,7 @@ class Home extends StatelessWidget {
             physics: NeverScrollableScrollPhysics(),
             children: [
               ExampleLined(),
-              ExampleSquared(),
+              ExampleGrid(),
               ExampleCustom(),
             ],
           ),
