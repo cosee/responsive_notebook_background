@@ -23,7 +23,7 @@ class ResponsiveNotebookBackgroundOptions {
   /// Background color.
   final Color backgroundColor;
 
-  /// Lines color.
+  /// Line color.
   final Color lineColor;
 
   /// Type of lines.

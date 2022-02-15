@@ -27,25 +27,6 @@ class LineSizeBuilder extends StatelessWidget {
   })  : maxWidth = double.infinity,
         super(key: key);
 
-  /// Determines the height of multiple lines of text
-  const LineSizeBuilder.forLineCount({
-    Key? key,
-    this.styleForHeightCalculation,
-    required int lineCount,
-    required this.builder,
-  })  : maxWidth = double.infinity,
-        text = ' ${'\n' * (lineCount - 1)}',
-        super(key: key);
-
-  /// Determines the height of a given text.
-  const LineSizeBuilder.forText({
-    Key? key,
-    this.styleForHeightCalculation,
-    required this.maxWidth,
-    required this.text,
-    required this.builder,
-  }) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     final painter = TextPainter(
