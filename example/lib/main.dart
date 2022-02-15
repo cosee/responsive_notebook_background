@@ -41,7 +41,7 @@ class Home extends StatelessWidget {
                 text: 'Lined',
               ),
               Tab(
-                text: 'Squared',
+                text: 'Grid',
               ),
               Tab(
                 text: 'Custom',
