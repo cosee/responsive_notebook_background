@@ -1,6 +1,6 @@
 name: responsive_notebook_background
 description: A notebook background which is responsive to the system text size settings.
-version: 0.1.1
+version: 0.1.2
 repository: https://github.com/cosee/responsive_notebook_background
 
 environment:

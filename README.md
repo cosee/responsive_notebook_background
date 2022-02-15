@@ -28,42 +28,34 @@ import 'package:responsive_notebook_background/responsive_notebook_background.da
 Example:
 
 ```dart
-const ResponsiveNotebookBackground(options: ResponsiveNotebookBackgroundOptions
-(
-),child: Text
-('Lorem ipsum dolor sit amet.
-'
-)
-,
+const ResponsiveNotebookBackground(
+    options: ResponsiveNotebookBackgroundOptions(),
+    child: Text('Lorem ipsum dolor sit amet.'),
 );
 ```
 
 ## Customization options
 
 ```dart
-
 static const TextStyle _textStyle = TextStyle(
-  fontSize: 18,
-  fontWeight: FontWeight.w500,
-  color: Colors.brown,
+    fontSize: 18,
+    fontWeight: FontWeight.w500,
+    color: Colors.brown,
 );
 
-const ResponsiveNotebookBackground(options: ResponsiveNotebookBackgroundOptions
-(
-blankLines: 2
-,
-horizontalPadding: 20
-,
-lineWidth: 2.5
-,
-backgroundColor: Colors.black12,lineColor: Colors.blueAccent,lineType: LineType
-    .line,styleForHeightCalculation: _textStyle,)
-,
-child: Text
-('Lorem ipsum dolor sit amet.
-'
-,
-style: _textStyle,)
-,
+const ResponsiveNotebookBackground(
+    options: ResponsiveNotebookBackgroundOptions(
+      blankLines: 2,
+      horizontalPadding: 20,
+      lineWidth: 2.5,
+      backgroundColor: Colors.black12,
+      lineColor: Colors.blueAccent,
+      lineType: LineType.line,
+      styleForHeightCalculation: _textStyle,
+    ),
+    child: Text(
+      'Lorem ipsum dolor sit amet.',
+      style: _textStyle,
+    ),
 );
 ```
