@@ -7,7 +7,7 @@ class ExampleCustom extends StatelessWidget {
   static const TextStyle _textStyle = TextStyle(
     fontSize: 18,
     fontWeight: FontWeight.w500,
-    color: Colors.blue,
+    color: Colors.brown,
   );
 
   @override
@@ -27,7 +27,7 @@ class ExampleCustom extends StatelessWidget {
                 horizontalPadding: 20,
                 lineWidth: 2.5,
                 backgroundColor: Colors.black12,
-                lineColor: Colors.purpleAccent,
+                lineColor: Colors.blueAccent,
                 lineType: LineType.line,
                 styleForHeightCalculation: _textStyle,
               ),
