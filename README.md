@@ -16,7 +16,7 @@ Depend on it:
 
 ```yaml
 dependencies:
-  responsive_notebook_background: ^0.1.0
+  responsive_notebook_background: ^0.1.3
 ```
 
 Import it:
