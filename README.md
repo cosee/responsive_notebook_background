@@ -1,3 +1,9 @@
+# Responsive Notebook Background
+[![pub package][pub_badge]][pub_badge_link]
+[![package publisher][publisher_badge]][publisher_badge_link]
+[![style][style_badge]][style_link]
+[![license][license_badge]][license_link]
+
 A notebook background which is responsive to the system text size settings.
 
 ## Features
@@ -59,3 +65,18 @@ const ResponsiveNotebookBackground(
     ),
 );
 ```
+[publisher_badge]: https://img.shields.io/pub/publisher/responsive_notebook_background.svg
+
+[publisher_badge_link]: https://pub.dev/publishers/cosee.biz/packages
+
+[license_badge]: https://img.shields.io/github/license/cosee/responsive_notebook_background
+
+[license_link]: https://github.com/cosee/responsive_notebook_background/blob/main/LICENSE
+
+[style_badge]: https://img.shields.io/badge/style-cosee__lints-brightgreen
+
+[style_link]: https://pub.dev/packages/cosee_lints
+
+[pub_badge]: https://img.shields.io/pub/v/responsive_notebook_background.svg
+
+[pub_badge_link]: https://pub.dartlang.org/packages/responsive_notebook_background
