@@ -27,10 +27,12 @@ class ExampleGrid extends StatelessWidget {
                         left: textHeight,
                         top: textHeight * 10,
                       ),
-                      child: Container(
-                        color: Colors.red,
+                      child: SizedBox(
                         height: textHeight * 8,
                         width: textHeight * 10,
+                        child: const ColoredBox(
+                          color: Colors.red,
+                        ),
                       ),
                     ),
                     Padding(
@@ -38,10 +40,12 @@ class ExampleGrid extends StatelessWidget {
                         left: textHeight * 7,
                         top: textHeight,
                       ),
-                      child: Container(
-                        color: Colors.blue,
+                      child: SizedBox(
                         height: textHeight * 6,
                         width: textHeight * 13,
+                        child: const ColoredBox(
+                          color: Colors.blue,
+                        ),
                       ),
                     ),
                     Padding(
@@ -49,13 +53,17 @@ class ExampleGrid extends StatelessWidget {
                         left: textHeight * 8,
                         top: textHeight * 22,
                       ),
-                      child: Container(
-                        decoration: const BoxDecoration(
-                          shape: BoxShape.circle,
-                          color: Colors.orange,
-                        ),
+                      child: SizedBox(
                         height: textHeight * 10,
                         width: textHeight * 10,
+                        child: Container(
+                          decoration: const BoxDecoration(
+                            shape: BoxShape.circle,
+                            color: Colors.orange,
+                          ),
+                          height: textHeight * 10,
+                          width: textHeight * 10,
+                        ),
                       ),
                     ),
                   ],

@@ -17,13 +17,13 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.green,
       ),
-      home: const Home(),
+      home: const _Home(),
     );
   }
 }
 
-class Home extends StatelessWidget {
-  const Home({
+class _Home extends StatelessWidget {
+  const _Home({
     Key? key,
   }) : super(key: key);
 
@@ -60,8 +60,8 @@ class Home extends StatelessWidget {
           ),
         ),
         bottomNavigationBar: BottomAppBar(
-          child: const SizedBox.shrink(),
           color: Theme.of(context).colorScheme.primary,
+          child: const SizedBox.shrink(),
         ),
       ),
     );
