@@ -71,7 +71,7 @@ const ResponsiveNotebookBackground(
 
 [license_badge]: https://img.shields.io/github/license/cosee/responsive_notebook_background
 
-[license_link]: https://github.com/cosee/responsive_notebook_background/blob/main/LICENSE
+[license_link]: https://github.com/cosee/responsive_notebook_background/blob/master/LICENSE
 
 [style_badge]: https://img.shields.io/badge/style-cosee__lints-brightgreen
 
