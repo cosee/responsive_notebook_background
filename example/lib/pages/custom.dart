@@ -5,10 +5,10 @@ import 'package:responsive_notebook_background/responsive_notebook_background.da
 class ExampleCustom extends StatelessWidget {
   const ExampleCustom({Key? key}) : super(key: key);
 
-  static const TextStyle _textStyle = TextStyle(
+  static final TextStyle _textStyle = TextStyle(
     fontSize: 18,
     fontWeight: FontWeight.w500,
-    color: Colors.brown,
+    color: Colors.blue.shade900,
   );
 
   @override
@@ -23,12 +23,13 @@ class ExampleCustom extends StatelessWidget {
               minWidth: constraints.maxWidth,
             ),
             child: ResponsiveNotebookBackground(
-              options: const ResponsiveNotebookBackgroundOptions(
+              options: ResponsiveNotebookBackgroundOptions(
                 blankLines: 2,
                 horizontalPadding: 20,
                 lineWidth: 2.5,
-                backgroundColor: Colors.black12,
-                lineColor: Colors.blueAccent,
+                backgroundColor:
+                    Theme.of(context).colorScheme.secondary.withOpacity(0.4),
+                lineColor: Theme.of(context).colorScheme.secondary,
                 styleForHeightCalculation: _textStyle,
               ),
               child: Text(

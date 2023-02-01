@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:responsive_notebook_background_example/pages/custom.dart';
 import 'package:responsive_notebook_background_example/pages/grid.dart';
 import 'package:responsive_notebook_background_example/pages/lined.dart';
+import 'package:responsive_notebook_background_example/theme.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,9 +15,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'ResponsiveNotebookBackground demo',
-      theme: ThemeData(
-        primarySwatch: Colors.green,
-      ),
+      theme: CustomTheme.theme(context),
       home: const _Home(),
     );
   }
