@@ -1,9 +1,19 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 /// LineSizeBuilder class
 ///
 /// Can be used to align objects according to the text height.
 class LineSizeBuilder extends StatelessWidget {
+  /// Determines the height of a single line of text
+  const LineSizeBuilder.forSingleLine({
+    Key? key,
+    this.styleForHeightCalculation,
+    this.text,
+    this.maxWidth = double.infinity,
+    required this.builder,
+  }) : super(key: key);
+
   /// Optional text. Required for LineSizeBuilder.forText()
   final String? text;
 
@@ -12,20 +22,12 @@ class LineSizeBuilder extends StatelessWidget {
   /// If not set, [ThemeDate.primaryTextTheme.bodyText1] will be used.
   final TextStyle? styleForHeightCalculation;
 
-  /// Optional maximal width the text can use. Required for LineSizeBuilder.forText
+  /// Optional maximal width the text can use.
+  /// Required for LineSizeBuilder.forText
   final double maxWidth;
 
   /// Called to obtain the child widget.
   final Widget Function(BuildContext context, double height) builder;
-
-  /// Determines the height of a single line of text
-  const LineSizeBuilder.forSingleLine({
-    Key? key,
-    this.styleForHeightCalculation,
-    this.text,
-    required this.builder,
-  })  : maxWidth = double.infinity,
-        super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -33,12 +35,33 @@ class LineSizeBuilder extends StatelessWidget {
       text: TextSpan(
         text: text,
         style: styleForHeightCalculation ??
-            Theme.of(context).primaryTextTheme.bodyText1,
+            Theme.of(context).primaryTextTheme.bodyLarge,
       ),
       textScaleFactor: MediaQuery.of(context).textScaleFactor,
       textDirection: TextDirection.ltr,
     )..layout(maxWidth: maxWidth);
 
     return builder(context, painter.size.height);
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(StringProperty('text', text))
+      ..add(
+        DiagnosticsProperty<TextStyle?>(
+          'styleForHeightCalculation',
+          styleForHeightCalculation,
+        ),
+      )
+      ..add(DoubleProperty('maxWidth', maxWidth))
+      ..add(
+        ObjectFlagProperty<
+            Widget Function(BuildContext context, double height)>.has(
+          'builder',
+          builder,
+        ),
+      );
   }
 }

@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:responsive_notebook_background/src/line_size_builder.dart';
 
@@ -5,6 +6,16 @@ import 'package:responsive_notebook_background/src/line_size_builder.dart';
 ///
 /// Either displaying single lines or grids.
 class Notebook extends StatelessWidget {
+  /// Constructor of Notebook
+  const Notebook({
+    Key? key,
+    this.style,
+    required this.lineColor,
+    required this.lineWidth,
+    required this.backgroundColor,
+    required this.isGrid,
+  }) : super(key: key);
+
   /// Custom [TextStyle] to be used for the [LineSizeBuilder].
   ///
   /// If not set, [ThemeDate.primaryTextTheme.bodyText1] will be used.
@@ -22,20 +33,11 @@ class Notebook extends StatelessWidget {
   /// Thickness of the lines.
   final double lineWidth;
 
-  const Notebook({
-    Key? key,
-    this.style,
-    required this.lineColor,
-    required this.lineWidth,
-    required this.backgroundColor,
-    required this.isGrid,
-  }) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     return LineSizeBuilder.forSingleLine(
       styleForHeightCalculation: style,
-      builder: (_, textHeight) => Container(
+      builder: (_, textHeight) => ColoredBox(
         color: backgroundColor,
         child: CustomPaint(
           painter: _NotebookPainter(
@@ -48,11 +50,29 @@ class Notebook extends StatelessWidget {
       ),
     );
   }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty<TextStyle?>('style', style))
+      ..add(DiagnosticsProperty<bool>('isGrid', isGrid))
+      ..add(ColorProperty('lineColor', lineColor))
+      ..add(ColorProperty('backgroundColor', backgroundColor))
+      ..add(DoubleProperty('lineWidth', lineWidth));
+  }
 }
 
 /// Painter for the [Notebook].
 /// Paints grids or single lines depending on [isGrid].
 class _NotebookPainter extends CustomPainter {
+  const _NotebookPainter({
+    required this.textHeight,
+    required this.lineWidth,
+    required this.isGrid,
+    required this.lineColor,
+  });
+
   /// The space between each line
   final double textHeight;
 
@@ -65,13 +85,6 @@ class _NotebookPainter extends CustomPainter {
   /// Line color.
   final Color lineColor;
 
-  const _NotebookPainter({
-    required this.textHeight,
-    required this.lineWidth,
-    required this.isGrid,
-    required this.lineColor,
-  });
-
   Paint get _linePaint => Paint()
     ..color = lineColor
     ..strokeWidth = lineWidth;
@@ -82,8 +95,8 @@ class _NotebookPainter extends CustomPainter {
 
   void _createCommonNotebook(Size size, Canvas canvas, Paint linePaint) {
     for (double yPosition = textHeight;
-        yPosition < size.height;
-        yPosition += textHeight) {
+    yPosition < size.height;
+    yPosition += textHeight) {
       canvas.drawLine(
         Offset(0, yPosition),
         Offset(size.width, yPosition),
@@ -93,8 +106,8 @@ class _NotebookPainter extends CustomPainter {
 
     if (isGrid) {
       for (double xPosition = 0;
-          xPosition < size.width;
-          xPosition += textHeight) {
+      xPosition < size.width;
+      xPosition += textHeight) {
         canvas.drawLine(
           Offset(xPosition, 0),
           Offset(xPosition, size.height),

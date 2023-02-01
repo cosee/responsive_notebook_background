@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 ///
 /// Contains all options for the ResponsiveNotebookBackground.
 class ResponsiveNotebookBackgroundOptions {
+
+  /// Constructor of ResponsiveNotebookBackgroundOptions
   const ResponsiveNotebookBackgroundOptions({
     this.horizontalPadding = 0.0,
     this.blankLines = 0,
@@ -42,6 +44,8 @@ class ResponsiveNotebookBackgroundOptions {
 
 /// The type of the line
 enum LineType {
+  /// line type
   line,
+  /// grid type
   grid,
 }

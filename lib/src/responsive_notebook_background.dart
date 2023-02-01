@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:responsive_notebook_background/src/line_size_builder.dart';
 import 'package:responsive_notebook_background/src/notebook.dart';
@@ -7,17 +8,18 @@ import 'package:responsive_notebook_background/src/options.dart';
 ///
 /// Add [ResponsiveNotebookBackgroundOptions] to make adjustments.
 class ResponsiveNotebookBackground extends StatelessWidget {
-  /// Optional widget which will placed over the notebook background
-  final Widget? child;
-
-  /// Options for the [ResponsiveNotebookBackground].
-  final ResponsiveNotebookBackgroundOptions options;
-
+  /// Constructor of ResponsiveNotebookBackground
   const ResponsiveNotebookBackground({
     Key? key,
     this.child,
     required this.options,
   }) : super(key: key);
+
+  /// Optional widget which will placed over the notebook background
+  final Widget? child;
+
+  /// Options for the [ResponsiveNotebookBackground].
+  final ResponsiveNotebookBackgroundOptions options;
 
   @override
   Widget build(BuildContext context) {
@@ -47,6 +49,17 @@ class ResponsiveNotebookBackground extends StatelessWidget {
           ],
         );
       },
+    );
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties.add(
+      DiagnosticsProperty<ResponsiveNotebookBackgroundOptions>(
+        'options',
+        options,
+      ),
     );
   }
 }
