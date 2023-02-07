@@ -1,3 +1,7 @@
+## 0.1.5
+
+* Edit example gif
+
 ## 0.1.4
 
 * Add example gif
