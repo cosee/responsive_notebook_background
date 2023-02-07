@@ -1,3 +1,8 @@
+## 0.1.4
+
+* Add example gif
+* Edit screenshots
+
 ## 0.1.3
 
 * Updated for Flutter 3.7
