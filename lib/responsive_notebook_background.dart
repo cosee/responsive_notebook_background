@@ -1,4 +1,3 @@
-library responsive_notebook_background;
 
 export 'src/line_size_builder.dart';
 export 'src/options.dart';

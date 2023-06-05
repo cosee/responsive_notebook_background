@@ -7,11 +7,10 @@ import 'package:flutter/material.dart';
 class LineSizeBuilder extends StatelessWidget {
   /// Determines the height of a single line of text
   const LineSizeBuilder.forSingleLine({
-    super.key,
+    required this.builder, super.key,
     this.styleForHeightCalculation,
     this.text,
     this.maxWidth = double.infinity,
-    required this.builder,
   });
 
   /// Optional text. Required for LineSizeBuilder.forText()
