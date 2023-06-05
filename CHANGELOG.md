@@ -1,3 +1,7 @@
+## 0.1.6
+
+* Migrate to Dart 3
+
 ## 0.1.5
 
 * Edit example gif
