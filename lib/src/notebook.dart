@@ -8,13 +8,13 @@ import 'package:responsive_notebook_background/src/line_size_builder.dart';
 class Notebook extends StatelessWidget {
   /// Constructor of Notebook
   const Notebook({
-    Key? key,
+    super.key,
     this.style,
     required this.lineColor,
     required this.lineWidth,
     required this.backgroundColor,
     required this.isGrid,
-  }) : super(key: key);
+  });
 
   /// Custom [TextStyle] to be used for the [LineSizeBuilder].
   ///

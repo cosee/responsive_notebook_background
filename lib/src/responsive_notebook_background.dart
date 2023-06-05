@@ -10,10 +10,10 @@ import 'package:responsive_notebook_background/src/options.dart';
 class ResponsiveNotebookBackground extends StatelessWidget {
   /// Constructor of ResponsiveNotebookBackground
   const ResponsiveNotebookBackground({
-    Key? key,
+    super.key,
     this.child,
     required this.options,
-  }) : super(key: key);
+  });
 
   /// Optional widget which will placed over the notebook background
   final Widget? child;
