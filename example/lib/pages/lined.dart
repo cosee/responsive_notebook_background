@@ -3,7 +3,7 @@ import 'package:flutter_lorem/flutter_lorem.dart';
 import 'package:responsive_notebook_background/responsive_notebook_background.dart';
 
 class ExampleLined extends StatelessWidget {
-  const ExampleLined({Key? key}) : super(key: key);
+  const ExampleLined({super.key});
 
   @override
   Widget build(BuildContext context) {
