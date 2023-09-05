@@ -3,7 +3,7 @@ import 'package:flutter_lorem/flutter_lorem.dart';
 import 'package:responsive_notebook_background/responsive_notebook_background.dart';
 
 class ExampleCustom extends StatelessWidget {
-  const ExampleCustom({Key? key}) : super(key: key);
+  const ExampleCustom({super.key});
 
   static final TextStyle _textStyle = TextStyle(
     fontSize: 18,
