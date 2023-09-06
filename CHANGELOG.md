@@ -1,3 +1,8 @@
+## 0.1.7
+
+* Add screenshots.
+* Add topics.
+
 ## 0.1.6
 
 * Migrate to Dart 3
@@ -14,7 +19,7 @@
 ## 0.1.3
 
 * Updated for Flutter 3.7
-* Use cosee_lints 
+* Use cosee_lints
 * Redesign Example
 
 ## 0.1.2
