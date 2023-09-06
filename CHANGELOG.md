@@ -1,7 +1,12 @@
-## 0.1.7
+## 1.0.0
 
 * Add screenshots.
 * Add topics.
+
+## 0.1.7
+
+* Add cosee_lints
+* Migrate example to Dart 3
 
 ## 0.1.6
 
