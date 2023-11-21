@@ -37,7 +37,7 @@ class LineSizeBuilder extends StatelessWidget {
         style: styleForHeightCalculation ??
             Theme.of(context).primaryTextTheme.bodyLarge,
       ),
-      textScaleFactor: MediaQuery.of(context).textScaleFactor,
+      textScaler: MediaQuery.of(context).textScaler,
       textDirection: TextDirection.ltr,
     )..layout(maxWidth: maxWidth);
 
