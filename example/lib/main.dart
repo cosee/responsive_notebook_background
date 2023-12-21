@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'ResponsiveNotebookBackground demo',
-      theme: CustomTheme.theme(context),
+      theme: CustomTheme.theme,
       home: const _Home(),
     );
   }

@@ -3,17 +3,18 @@ import 'package:flutter/material.dart';
 class CustomTheme {
   const CustomTheme._();
 
-  static ThemeData theme(BuildContext context) => ThemeData(
-        useMaterial3: false,
-        colorScheme: Theme.of(context).colorScheme.copyWith(
-              primary: green,
-              secondary: _yellow,
-            ),
-        bottomSheetTheme:
-            const BottomSheetThemeData(backgroundColor: Colors.transparent),
-      );
+  static final theme = ThemeData(
+    useMaterial3: false,
+    colorScheme: ColorScheme.fromSeed(
+      seedColor: Colors.red,
+      primary: _green,
+      secondary: _yellow,
+    ),
+    bottomSheetTheme:
+        const BottomSheetThemeData(backgroundColor: Colors.transparent),
+  );
 
-  static const MaterialColor green = MaterialColor(
+  static const MaterialColor _green = MaterialColor(
     _greenPrimaryValue,
     <int, Color>{
       50: Color(0xFFa7d7a3),
