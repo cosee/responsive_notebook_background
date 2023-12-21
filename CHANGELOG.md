@@ -1,3 +1,8 @@
+## 1.0.1
+
+* Replace deprecated `textScaleFactor` with `textScaler`.
+* Update example screenshots.
+
 ## 1.0.0
 
 * Add screenshots.
