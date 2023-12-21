@@ -6,7 +6,7 @@ repository: https://github.com/cosee/responsive_notebook_background/tree/main
 issue_tracker: https://github.com/cosee/responsive_notebook_background/issues
 screenshots:
   - description: 'Default appearance of ResponsiveNotebookBackground'
-    path: 'example/screenshots/lined.jpeg'
+    path: 'example/screenshots/lined.webp'
 topics:
   - background
   - notebook

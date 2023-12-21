@@ -6,7 +6,7 @@
 
 A notebook background which is responsive to the system text size settings.
 
-![Preview example](example/screenshots/example.gif "Example")
+![Preview example](example/screenshots/example.webp "Example")
 
 ## Features
 
