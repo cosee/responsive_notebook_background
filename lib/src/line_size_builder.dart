@@ -19,6 +19,7 @@ class LineSizeBuilder extends StatelessWidget {
 
   /// Custom [TextStyle] to be used when calculating the line height.
   ///
+  // ignore: comment_references, ThemeData is included in flutter
   /// If not set, [ThemeDate.primaryTextTheme.bodyText1] will be used.
   final TextStyle? styleForHeightCalculation;
 
