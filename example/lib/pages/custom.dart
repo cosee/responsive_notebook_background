@@ -27,10 +27,9 @@ class ExampleCustom extends StatelessWidget {
                 blankLines: 2,
                 horizontalPadding: 20,
                 lineWidth: 2.5,
-                backgroundColor: Theme.of(context)
-                    .colorScheme
-                    .secondary
-                    .withValues(alpha: 0.4),
+                backgroundColor: Theme.of(
+                  context,
+                ).colorScheme.secondary.withValues(alpha: 0.4),
                 lineColor: Theme.of(context).colorScheme.secondary,
                 styleForHeightCalculation: _textStyle,
               ),
