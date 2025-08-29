@@ -6,7 +6,7 @@ class CustomTheme {
   static final theme = ThemeData(
     useMaterial3: false,
     colorScheme: ColorScheme.fromSeed(
-      seedColor: Colors.red,
+      seedColor: _green,
       primary: _green,
       secondary: _yellow,
     ),
