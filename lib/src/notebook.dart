@@ -95,11 +95,9 @@ class _NotebookPainter extends CustomPainter {
       _createCommonNotebook(size, canvas, _linePaint);
 
   void _createCommonNotebook(Size size, Canvas canvas, Paint linePaint) {
-    for (
-      double yPosition = textHeight;
-      yPosition < size.height;
-      yPosition += textHeight
-    ) {
+    for (double yPosition = textHeight;
+        yPosition < size.height;
+        yPosition += textHeight) {
       canvas.drawLine(
         Offset(0, yPosition),
         Offset(size.width, yPosition),
@@ -108,11 +106,9 @@ class _NotebookPainter extends CustomPainter {
     }
 
     if (isGrid) {
-      for (
-        double xPosition = 0;
-        xPosition < size.width;
-        xPosition += textHeight
-      ) {
+      for (double xPosition = 0;
+          xPosition < size.width;
+          xPosition += textHeight) {
         canvas.drawLine(
           Offset(xPosition, 0),
           Offset(xPosition, size.height),

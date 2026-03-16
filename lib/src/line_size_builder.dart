@@ -35,8 +35,7 @@ class LineSizeBuilder extends StatelessWidget {
     final painter = TextPainter(
       text: TextSpan(
         text: text,
-        style:
-            styleForHeightCalculation ??
+        style: styleForHeightCalculation ??
             Theme.of(context).primaryTextTheme.bodyLarge,
       ),
       textScaler: MediaQuery.of(context).textScaler,
@@ -60,8 +59,7 @@ class LineSizeBuilder extends StatelessWidget {
       ..add(DoubleProperty('maxWidth', maxWidth))
       ..add(
         ObjectFlagProperty<
-          Widget Function(BuildContext context, double height)
-        >.has(
+            Widget Function(BuildContext context, double height)>.has(
           'builder',
           builder,
         ),
